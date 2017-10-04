@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Themes model extends actions main model and further the BootstrapModel
+ * @link http://docs.appzio.com/toolkit-section/models/
+ */
+
 namespace packages\actionMexample\themes\example\Controllers;
 
 use packages\actionMexample\themes\example\Views\Main;
