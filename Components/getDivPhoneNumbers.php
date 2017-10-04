@@ -7,13 +7,13 @@ trait getDivPhoneNumbers {
 
     /**
      * This will return a div content when user has clicked on the country selector in the getPhoneNumberField.
-     * @link packages\actionMexample\Components\getPhoneNumberField
      *
      * This div can be included by the view or it can also be registred by another component, by adding:
      * <code>
      * $this->addDivs(array('countries' => 'getDivPhoneNumbers'));
      * </code>
      * @return \stdClass
+     * @link packages\actionMexample\Components\getPhoneNumberField
      */
 
     public function getDivPhoneNumbers(){
