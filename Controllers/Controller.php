@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * Default controller for your action. If no other route is defined, the action will default to this controller
+ * and its default method actionDefault() which must always be defined.
+ *
+ * Unless controller has $this->no_output set to true, it should always return the view file name. Data from
+ * the controller to view is passed as a second part of the return array.
+ *
+ * Theme's controller extends this file, so usually you would define the functions as public so that they can
+ * be overriden by the theme controller.
+ *
+ */
+
 namespace packages\actionMexample\Controllers;
 use Bootstrap\Controllers\BootstrapController;
 use packages\actionMexample\Views\View as ArticleView;
@@ -7,18 +19,27 @@ use packages\actionMexample\Models\Model as ArticleModel;
 
 class Controller extends BootstrapController {
 
-    /* @var ArticleView */
+    /**
+     * @var ArticleView
+     */
     public $view;
 
-    /* @var ArticleModel */
+    /**
+     * Your model and Bootstrap model methods are accessible through this variable
+     * @var ArticleModel
+     */
     public $model;
 
-
-    /* this is the default action inside the controller. This gets called, if
-    nothing else is defined for the route */
+    /**
+     * This is the default action inside the controller. This function gets called, if
+     * nothing else is defined for the route
+     * @return array
+     */
     public function actionDefault(){
 
-        /* if user has already completed the first phase, move to phase 2 */
+        /**
+         * if user has already completed the first phase, move to phase 2
+         */
         if($this->model->sessionGet('reg_phase') == 2){
             return $this->actionPagetwo();
         }
@@ -26,13 +47,18 @@ class Controller extends BootstrapController {
         $data['fieldlist'] = $this->model->getFieldlist();
         $data['current_country'] = $this->model->getCountry();
 
-        /* if user has clicked the signuop, we will first validate
-        and then save the data. validation errors are also available to views and components. */
+        /**
+         * If user has clicked the signup, we will first validate
+         * and then save the data. Validation errors are also available to views and components.
+         */
+
         if($this->getMenuId() == 'signup'){
             $this->model->validatePage1();
 
             if(empty($this->model->validation_errors)){
-                /* if validation succeeds, we save data to variables and move user to page 2*/
+                /**
+                 * If validation succeeds, we save data to variables and move user to page 2
+                 */
                 $this->model->savePage1();
                 $this->model->sessionSet('reg_phase', 2);
                 return ['Pagetwo',$data];
@@ -43,6 +69,21 @@ class Controller extends BootstrapController {
     }
 
 
+    /**
+     * This function can be invoked by the controllers main method, of if you define an OnClick
+     * event routing directly to this. In order to change the actions route to point to this controller
+     * function, you would define it like this:
+     * <code>
+     *   $this->getOnclickRoute('Default/pagetwo/');
+     * </code>
+     *
+     * And in order to invoke the "done" portion of the controller, you would define it as:
+     * <code>
+     *   $this->getOnclickRoute('Default/pagetwo/done');
+     * </code>
+
+     * @return array
+     */
     public function actionPagetwo(){
 
         $data['mode'] = 'show';

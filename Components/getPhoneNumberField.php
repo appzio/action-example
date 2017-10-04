@@ -1,24 +1,19 @@
 <?php
 
 namespace packages\actionMexample\Components;
-use function array_flip;
 use Bootstrap\Components\BootstrapComponent;
-use function strtolower;
 
 trait getPhoneNumberField {
 
+
     /**
-     * @param $content string, no support for line feeds
-     * @param array $styles 'margin', 'padding', 'orientation', 'background', 'alignment', 'radius', 'opacity',
-     * 'orientation', 'height', 'width', 'align', 'crop', 'text-style', 'font-size', 'text-color', 'border-color',
-     * 'border-width', 'font-android', 'font-ios', 'background-color', 'background-image', 'background-size',
-     * 'color', 'shadow-color', 'shadow-offset', 'shadow-radius', 'vertical-align', 'border-radius', 'text-align',
-     * 'lazy', 'floating' (1), 'float' (right | left), 'max-height', 'white-space' (no-wrap), parent_style
-     * @param array $parameters selected_state, variable, onclick, style
+     * @param string $country -- country name
+     * @param $field -- field name or id
+     * @param string $title -- Title for the field. Recommended to be provided as a localization string like this: {#name#}
+     * @param string $icon -- Icon file name. Icon should be put under images directory.
      * @return \stdClass
      */
-
-    public function getPhoneNumberField($country,$field,$title,$icon=false){
+    public function getPhoneNumberField(string $country, $field, string $title, string $icon=''){
         /** @var BootstrapComponent $this */
 
         $params['variable'] = $field;

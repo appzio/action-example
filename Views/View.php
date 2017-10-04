@@ -52,8 +52,6 @@ class View extends BootstrapView {
         return $this->layout;
     }
 
-    /* if view has getDivs defined, it will include all the needed divs for the view */
-
     public function getDivs(){
         $divs = new \stdClass();
 
