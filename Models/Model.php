@@ -8,14 +8,14 @@
 
 namespace packages\actionMexample\Models;
 use Bootstrap\Models\BootstrapModel;
-use function is_numeric;
-use function str_replace;
-use function stristr;
-use function strtolower;
-use function ucwords;
 
 class Model extends BootstrapModel {
 
+    /**
+     * This variable doesn't actually need to be declared here, but but here for documentation's sake.
+     * Validation erorr is an array where validation errors are saved and can be accessed by controller,
+     * view and components.
+     */
     public $validation_errors;
 
     private $password;
@@ -24,7 +24,11 @@ class Model extends BootstrapModel {
     private $firstname;
     private $lastname;
 
-    /* gets a list of configuration fields, these are used by the view */
+
+    /**
+     * Gets a list of configuration fields from the web form configuration. These are used by the view.
+     * @return array
+     */
     public function getFieldList(){
         $params = $this->getAllConfigParams();
         $output = array();
@@ -38,7 +42,9 @@ class Model extends BootstrapModel {
         return $output;
     }
 
-    /* active selected country for the phone number field */
+    /**
+     * Active selected country for the phone number field
+     */
     public function getCountry(){
 
         if($this->getSubmittedVariableByName('country_selected')){
@@ -53,7 +59,9 @@ class Model extends BootstrapModel {
         return $country;
     }
 
-    /* save to variables */
+    /**
+     * Save to variables. Called by controller if there are no validation errors.
+     */
     public function savePage1(){
         $vars['password'] = sha1(strtolower(trim($this->password)));
         $vars['email'] = $this->email;
@@ -64,7 +72,13 @@ class Model extends BootstrapModel {
         $this->saveNamedVariables($vars);
     }
 
-    /* will save all validated variables and add rest to error array */
+    /**
+     * Will do a basic validation for all submitted variables and save any errors
+     * to validation_errors. Validation errors are read by the field components directly,
+     * so that they can display error version of the field along with the validation message.
+     * Notice how all validation errors are defined as translation strings making it easy to
+     * localize the application.
+     */
     public function validatePage1(){
         $vars = $this->getAllSubmittedVariablesByName();
 
@@ -126,7 +140,13 @@ class Model extends BootstrapModel {
         }
     }
 
-    /* adds required variables and closes the login */
+    /**
+     * This is a special function for registration, which sets required variables to complete registration
+     * and closes the login branch. After registration is completed it will close both login and registration
+     * actions. You can the use branch triggering by setting your home branch to trigger when logged_in is
+     * set to 1. Login branch is defined in the action's configuration.
+     */
+
     public function closeLogin($dologin=true){
         if ($this->getConfigParam('require_login') == 1) {
             return true;

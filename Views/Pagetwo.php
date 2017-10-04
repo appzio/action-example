@@ -1,16 +1,57 @@
 <?php
 
+/**
+ * Its recommended to separate your main views to different files for better code organization, debugging and
+ * re-usability. Your view can extend the main view file if you use shared functions in several of your views
+ * or it can extend directly Bootstrap\Views\BootstrapView.
+ *
+ * In this view, we use divider and top shadow from the main view. Note, that if you are exending the main view,
+ * and your main view includes additional tabs or divs, it can add to unneccessary payload.
+ */
+
 namespace packages\actionMexample\Views;
 
 class Pagetwo extends View {
 
-    /* @var \packages\actionMexample\Components\Components */
+    /**
+     * Access your components through this variable. Built-in components can be accessed also directly from the view,
+     * but your custom components always through this object.
+     * @var \packages\actionMexample\Components\Components
+     */
     public $components;
     public $theme;
 
     public function __construct($obj){
         parent::__construct($obj);
     }
+
+    /**
+     * View will always need to have a function called tab1. View can include up to five tabs, named simply tab2 etc.
+     * Advantage with tabs are, that all tabs are loaded when action is updated, so you can navigate between tabs
+     * without doing any refreshes. To navigate to another tab, define OnClick in the following way:
+     * <code>
+     *  $this->getOnclickTab(2);
+     * </code>
+     *
+     * View should always return a class, with at least one of these defined:
+     * $this->layout->header[]
+     * $this->layout->scroll[]
+     * $this->layout->footer[]
+     * $this->layout->onload[]
+     * $this->layout->control[]
+     *
+     * Each of these sections must be an array and the array can only include objects. Be careful with types,
+     * returning any other types will throw an error in the client.
+     *
+     * @link http://docs.appzio.com/php-toolkit/viewsbootstrapview-php/
+     *
+     * Data from controller is accessed using $this->getData('fieldname','array');
+     *
+     * Data from controller must have type defined. This is to avoid data type errors which can happen rather
+     * easily without type casting.
+     *
+     * @return \stdClass
+     */
 
     public function tab1(){
         $this->layout = new \stdClass();
@@ -39,11 +80,11 @@ class Pagetwo extends View {
         return $this->layout;
     }
 
-    public function getDivs(){
-        $divs = new \stdClass();
-        $divs->countries = $this->components->getDivPhoneNumbers();
-        return $divs;
-    }
+    /**
+     * Model passes the fields that are configured using the webform (simple checkbox whether they are enabled
+     * or not) and adds them directly on the $this->layout->scroll[].
+     * @param $field
+     */
 
     public function addField_page2($field){
         switch($field){
@@ -59,18 +100,6 @@ class Pagetwo extends View {
                 break;
 
         }
-    }
-
-    public function getDivider(){
-        return $this->getComponentText('',array('style' => 'mreg_divider'));
-    }
-
-    private function setTopShadow(){
-        $txt[] = $this->getComponentText('');
-        $this->layout->header[] = $this->getComponentRow($txt, array(), array(
-            'background-color' => $this->color_top_bar_color,
-            'parent_style' => 'mreg_top_shadow'
-        ));
     }
 
 
