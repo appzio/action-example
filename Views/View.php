@@ -1,19 +1,22 @@
 <?php
 
+/**
+ * this is the default view, that is extended
+ * by the theme views.
+ */
+
 namespace packages\actionMexample\Views;
 
 use Bootstrap\Views\BootstrapView;
 use packages\actionMexample\Controllers\Components;
 use function stristr;
 
-/* this is the default view, that is extended
-by the theme views. Note that the theme should
-have the corresponding views, even though they would
-not be used */
 
 class View extends BootstrapView {
 
-    /* @var \packages\actionMexample\Components\Components */
+    /**
+     * @var \packages\actionMexample\Components\Components
+     */
     public $components;
     public $theme;
 

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * This is the main controller for the action
+ */
 namespace packages\actionMexample\Controllers;
 use Bootstrap\Controllers\BootstrapController;
 use packages\actionMexample\Views\View as ArticleView;
@@ -7,15 +10,18 @@ use packages\actionMexample\Models\Model as ArticleModel;
 
 class Controller extends BootstrapController {
 
-    /* @var ArticleView */
+    /**
+     * @var ArticleView */
     public $view;
 
-    /* @var ArticleModel */
+    /**
+     * @var ArticleModel */
     public $model;
 
 
-    /* this is the default action inside the controller. This gets called, if
-    nothing else is defined for the route */
+    /**
+     * this is the default action inside the controller. This gets called, if
+     * nothing else is defined for the route */
     public function actionDefault(){
 
         /* if user has already completed the first phase, move to phase 2 */
