@@ -5,9 +5,9 @@ use Bootstrap\Components\BootstrapComponent;
 
 trait getPhotoField {
 
-
     /**
-     * @param string $content -- optional field for defining different default picture. If variable profilepic is set,
+     * @param string $content
+     * This is an optional field for defining different default picture. If variable profilepic is set,
      * it will be used instead.
      * @return \stdClass
      */
