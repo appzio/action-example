@@ -47,12 +47,12 @@ class View extends BootstrapView {
      * Each of these sections must be an array and the array can only include objects. Be careful with types,
      * returning any other types will throw an error in the client.
      *
-     * @link http://docs.appzio.com/php-toolkit/viewsbootstrapview-php/
-     *
      * Data from controller is accessed using $this->getData('fieldname','array');
      *
      * Data from controller must have type defined. This is to avoid data type errors which can happen rather
      * easily without type casting.
+     *
+     * @link http://docs.appzio.com/php-toolkit/viewsbootstrapview-php/
      *
      * @return \stdClass
      */
