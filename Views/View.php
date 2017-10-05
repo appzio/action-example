@@ -33,10 +33,15 @@ class View extends BootstrapView {
      * </code>
      *
      * View should always return a class, with at least one of these defined:
+     *
      * $this->layout->header[]
+     *
      * $this->layout->scroll[]
+     *
      * $this->layout->footer[]
+     *
      * $this->layout->onload[]
+     *
      * $this->layout->control[]
      *
      * Each of these sections must be an array and the array can only include objects. Be careful with types,
