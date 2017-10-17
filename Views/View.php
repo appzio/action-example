@@ -3,6 +3,7 @@
 /**
  * This is a default View file. You see many references here and in components for style classes.
  * Documentation for styles you can see under themes/example/styles
+ * 
  */
 
 namespace packages\actionMexample\Views;
