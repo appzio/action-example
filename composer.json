@@ -1,0 +1,23 @@
+{
+    "name": "appzio/action-example",
+    "description": "Appzio example action module for PHP Library 2",
+    "keywords": ["appzio", "sdk"],
+    "type": "library",
+    "homepage": "https://github.com/appzio/action-example",
+    "license": "Apache2",
+    "authors": [
+        {
+            "name": "Appzio",
+            "homepage": "https://appzio.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.0"
+    },
+    "require-dev": {
+        "yiisoft/yii": "1.1.*"
+    },
+    "autoload": {
+        "classmap": ["src"]
+    }
+}
