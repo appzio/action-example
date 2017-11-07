@@ -1,20 +1,16 @@
 {
     "name": "appzio/action-example",
-    "description": "Appzio example action module for PHP Library 2",
-    "keywords": ["appzio", "sdk"],
-    "type": "library",
-    "homepage": "https://github.com/appzio/action-example",
-    "license": "Apache2",
-    "authors": [
-        {
-            "name": "Appzio",
-            "homepage": "https://appzio.com/"
-        }
-    ],
     "require": {
-        "php": ">=5.2.0"
+        "appzio/action-bootstrap2": ">=1.5"
     },
+    "repositories": [
+    	{
+        "url": "https://https://github.com/appzio/action-bootstrap2",
+        "type": "vcs"
+    	}
+    ],
+    "minimum-stability": "dev",
     "require-dev": {
-        "yiisoft/yii": "1.1.*"
+        "appzio/action-bootstrap2": ">=1.5",
     }
 }
