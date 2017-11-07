@@ -11,6 +11,6 @@
     ],
     "minimum-stability": "dev",
     "require-dev": {
-        "appzio/action-bootstrap2": ">=1.5",
+        "appzio/action-bootstrap2": ">=1.5"
     }
 }
