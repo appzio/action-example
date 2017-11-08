@@ -7,7 +7,6 @@
 
 namespace packages\actionMexample\themes\example\Controllers;
 
-use packages\actionMexample\themes\example\Views\Main;
 use packages\actionMexample\themes\example\Views\View as ArticleView;
 use packages\actionMexample\themes\example\Models\Model as ArticleModel;
 
@@ -23,7 +22,5 @@ class Controller extends \packages\actionMexample\Controllers\Controller {
     public function __construct($obj){
         parent::__construct($obj);
     }
-
-
 
 }
