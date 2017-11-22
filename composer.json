@@ -1,5 +1,5 @@
 {
-    "name": "appzio/action-example",
+    "name": "appzio/mexample",
     "require": {
         "appzio/action-bootstrap2": ">=1.5"
     },
