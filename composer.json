@@ -5,7 +5,7 @@
     },
     "repositories": [
     	{
-        "url": "https://https://github.com/appzio/action-bootstrap2",
+        "url": "https://github.com/appzio/action-bootstrap2",
         "type": "vcs"
     	}
     ],
