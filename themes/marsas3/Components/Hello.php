@@ -1,6 +1,6 @@
 <?php
 
-namespace packages\actionMaris\themes\example\Components;
+namespace packages\actionMaris\themes\marsas3\Components;
 use Bootstrap\Components\BootstrapComponent;
 
 trait Hello {

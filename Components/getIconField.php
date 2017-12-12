@@ -1,6 +1,6 @@
 <?php
 
-namespace packages\actionMexample\Components;
+namespace packages\actionMaris\Components;
 use Bootstrap\Components\BootstrapComponent;
 
 trait getIconField {

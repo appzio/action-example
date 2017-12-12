@@ -5,10 +5,10 @@
  * @link http://docs.appzio.com/toolkit-section/models/
  */
 
-namespace packages\actionMaris\themes\example\Controllers;
+namespace packages\actionMaris\themes\marsas3\Controllers;
 
-use packages\actionMaris\themes\example\Views\View as ArticleView;
-use packages\actionMaris\themes\example\Models\Model as ArticleModel;
+use packages\actionMaris\themes\marsas3\Views\View as ArticleView;
+use packages\actionMaris\themes\marsas3\Models\Model as ArticleModel;
 
 class Controller extends \packages\actionMaris\Controllers\Controller {
 

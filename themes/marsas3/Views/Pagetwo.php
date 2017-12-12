@@ -1,8 +1,8 @@
 <?php
 
-namespace packages\actionMaris\themes\example\Views;
+namespace packages\actionMaris\themes\marsas3\Views;
 use packages\actionMaris\Views\Pagetwo as BootstrapView;
-use packages\actionMaris\themes\example\Components\Components;
+use packages\actionMaris\themes\marsas3\Components\Components;
 
 class Pagetwo extends BootstrapView {
 

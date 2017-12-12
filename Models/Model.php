@@ -6,7 +6,7 @@
  * @link http://docs.appzio.com/toolkit-section/models/
  */
 
-namespace packages\actionMexample\Models;
+namespace packages\actionMaris\Models;
 use Bootstrap\Models\BootstrapModel;
 
 class Model extends BootstrapModel {
