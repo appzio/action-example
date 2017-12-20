@@ -5,12 +5,12 @@
  * @link http://docs.appzio.com/toolkit-section/models/
  */
 
-namespace packages\actionMaris\themes\example\Controllers;
+namespace packages\actionMexample\themes\example\Controllers;
 
-use packages\actionMaris\themes\example\Views\View as ArticleView;
-use packages\actionMaris\themes\example\Models\Model as ArticleModel;
+use packages\actionMexample\themes\example\Views\View as ArticleView;
+use packages\actionMexample\themes\example\Models\Model as ArticleModel;
 
-class Controller extends \packages\actionMaris\Controllers\Controller {
+class Controller extends \packages\actionMexample\Controllers\Controller {
 
     /* @var ArticleView */
     public $view;

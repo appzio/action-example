@@ -1,7 +1,7 @@
 <?php
 
-namespace packages\actionMaris\themes\example\Components;
-use packages\actionMaris\Components\Components as BootstrapComponents;
+namespace packages\actionMexample\themes\example\Components;
+use packages\actionMexample\Components\Components as BootstrapComponents;
 
 class Components extends BootstrapComponents {
 

@@ -16,7 +16,7 @@
  * the layout by the view.
  */
 
-namespace packages\actionMaris\Components;
+namespace packages\actionMexample\Components;
 use Bootstrap\Components\BootstrapComponent;
 
 class Components extends BootstrapComponent {

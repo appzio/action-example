@@ -1,6 +1,6 @@
 <?php
 
-namespace packages\actionMaris\Components;
+namespace packages\actionMexample\Components;
 use Bootstrap\Components\BootstrapComponent;
 
 trait getDivPhoneNumbers {
@@ -13,7 +13,7 @@ trait getDivPhoneNumbers {
      * $this->addDivs(array('countries' => 'getDivPhoneNumbers'));
      * </code>
      * @return \stdClass
-     * @link packages\actionMaris\Components\getPhoneNumberField
+     * @link packages\actionMexample\Components\getPhoneNumberField
      */
 
     public function getDivPhoneNumbers(){

@@ -23,7 +23,7 @@
  *
  */
 
-namespace packages\actionMaris\Models;
+namespace packages\actionMexample\Models;
 use CActiveRecord;
 
 class ProductcategoriesModel extends CActiveRecord {

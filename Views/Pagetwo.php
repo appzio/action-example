@@ -9,14 +9,14 @@
  * and your main view includes additional tabs or divs, it can add to unneccessary payload.
  */
 
-namespace packages\actionMaris\Views;
+namespace packages\actionMexample\Views;
 
 class Pagetwo extends View {
 
     /**
      * Access your components through this variable. Built-in components can be accessed also directly from the view,
      * but your custom components always through this object.
-     * @var \packages\actionMaris\Components\Components
+     * @var \packages\actionMexample\Components\Components
      */
     public $components;
     public $theme;

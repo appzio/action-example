@@ -19,10 +19,10 @@
  *
  */
 
-namespace packages\actionMaris\Controllers;
+namespace packages\actionMexample\Controllers;
 use Bootstrap\Controllers\BootstrapController;
-use packages\actionMaris\Views\View as ArticleView;
-use packages\actionMaris\Models\Model as ArticleModel;
+use packages\actionMexample\Views\View as ArticleView;
+use packages\actionMexample\Models\Model as ArticleModel;
 
 class Controller extends BootstrapController {
 
