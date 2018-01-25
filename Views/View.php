@@ -5,7 +5,7 @@
  * Documentation for styles you can see under themes/example/styles
  */
 
-namespace packages\actionMaris\Views;
+namespace packages\actionMexample\Views;
 
 use Bootstrap\Views\BootstrapView;
 
@@ -15,7 +15,7 @@ class View extends BootstrapView {
     /**
      * Access your components through this variable. Built-in components can be accessed also directly from the view,
      * but your custom components always through this object.
-     * @var \packages\actionMaris\Components\Components
+     * @var \packages\actionMexample\Components\Components
      */
     public $components;
     public $theme;
