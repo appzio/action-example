@@ -3,7 +3,23 @@
 Yii::import('application.modules.aeapi.models.*');
 
 /*
- * This runs any custom migrations needed by the action module
+ * This runs any custom migrations needed by the action module. These migrations
+ * are run even if the action is not defined to the app. Having an error here can
+ * cause problems with deployment as cloud deployments will run migrations automatically
+ * upon pod deployment.
+ *
+ * You can use the following helper functions:
+ *
+ * helperActionExists($shortname)
+ * helperDropRelation($table,$relation)
+ * helperGetRelationName($table, $target)
+ * helperRelationExists($table, $column, $target)
+ * helperTableExists($tablename)
+ * helperColumnExists($column, $table)
+ *
+ * Database tables should always start with:
+ * ae_ext_youractionshortname
+ *
  *
  */
 
@@ -26,6 +42,27 @@ class MigrationsactionMexample extends Migrations {
         ";
 
         @Yii::app()->db->createCommand($sql)->query();
+    }
+
+
+    private static function exampleMigration(){
+        if(!self::helperTableExists('ae_ext_example')) {
+            $path = Yii::getPathOfAlias('application.modules.aelogic.packages.actionMexample.Migrations');
+            $sql = file_get_contents($path . DS . 'tables.sql');
+            @Yii::app()->db->createCommand($sql)->query();
+        }
+    }
+
+    private static function exampleAppSpecific(){
+        // this will run only if its executed from the admin dashboard, not automatically on pod deployment
+        if(isset($_REQUEST['gid'])){
+            if(!self::helperTableExists('ae_ext_example')){
+                $path = Yii::getPathOfAlias('application.modules.aelogic.packages.actionMexample.Migrations');
+                $sql = file_get_contents($path.DS.'tables.sql');
+                $sql = str_replace('{{app_id}}', $_REQUEST['gid'], $sql);
+                @Yii::app()->db->createCommand($sql)->query();
+            }
+        }
     }
 
 
