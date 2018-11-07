@@ -8,6 +8,11 @@ Yii::import('application.modules.aeapi.models.*');
  * cause problems with deployment as cloud deployments will run migrations automatically
  * upon pod deployment.
  *
+ * NOTE:
+ * Actions migrations are run in alphabetical order. This might lead to problems with
+ * constraints if you need to have relations between actions. If you have relations
+ * between the actions, the constraints should be set by the last action (alphabetically).
+ *
  * You can use the following helper functions:
  *
  * helperActionExists($shortname)
