@@ -25,6 +25,9 @@ Yii::import('application.modules.aeapi.models.*');
  * Database tables should always start with:
  * ae_ext_youractionshortname
  *
+ * Its usually recommended to encapsulate more complex updates inside transaction,
+ * this if the migration fails, it doesn't crash. Faulty migration will prevent rest
+ * of the migrations from running if its not inside transaction.
  *
  */
 
